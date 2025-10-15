@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guocheng Wang — CV</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#0b6efd;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --maxwidth:1100px;
+      --print-bg:#ffffff;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#ffffff 60%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container{
+      max-width:var(--maxwidth);
+      margin:0 auto;
+      background:var(--card);
+      box-shadow:0 8px 30px rgba(16,24,40,0.08);
+      border-radius:12px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      height: 100vh; 
+    }
+
+    /* Sidebar (profile) */
+    .sidebar{
+      background:linear-gradient(180deg,#fbfdff,#f3f9ff);
+      padding:28px;
+      border-right:1px solid rgba(15,23,42,0.05);
+    }
+
+    .name{
+      font-size:1.25rem;
+      font-weight:700;
+      margin:0 0 6px 0;
+    }
+
+    .contact{
+      font-size:0.92rem;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .profile-photo{
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      object-fit:cover;
+      display:block;
+      margin:20px auto;
+      border:3px solid #eee;
+    }
+
+    .section-title{
+      font-size:0.82rem;
+      text-transform:uppercase;
+      color:var(--muted);
+      letter-spacing:1px;
+      margin:24px 0 8px 0;
+    }
+
+    ul{
+      list-style:none;
+      padding:0;
+      margin:8px 0 0 0;
+    }
+    ul li{margin:6px 0;font-size:0.95rem;}
+
+    /* Tabs */
+    .tabs{
+      display:flex;
+      gap:12px;
+      background:#f8fafc;
+      border-bottom:1px solid rgba(15,23,42,0.08);
+      padding:12px 20px;
+      overflow-x:auto;
+    }
+
+    .tab{
+      font-weight:600;
+      padding:8px 16px;
+      border-radius:6px;
+      cursor:pointer;
+      white-space:nowrap;
+      color:var(--muted);
+      transition:all 0.2s ease;
+    }
+
+    .tab.active{
+      background:var(--accent);
+      color:white;
+    }
+
+    /* Main content sections */
+    .right{
+      padding:28px 32px;
+    }
+
+    .card-section{
+      display:none;
+      animation:fadeIn 0.3s ease;
+    }
+
+    .card-section.active{
+      display:block;
+    }
+
+    .two-column-lists {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* two equal columns */
+      gap: 32px; /* space between columns */
+      align-items: start;
+    }
+
+    .contact-icons {
+      display: flex;
+      gap: 16px;           /* space between icons */
+      margin: 16px 0;
+      font-size: 1.4rem;   /* icon size */
+    }
+
+    .contact-icons a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .contact-icons a:hover {
+      transform: scale(1.2);
+    }
+
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(8px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    .item-title{font-weight:700;}
+    .item-meta{color:var(--muted);font-size:0.9rem;}
+    .bullet{margin:6px 0 0 0;padding-left:18px;}
+    .bullet li{margin:4px 0;font-size:0.95rem;}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .container{grid-template-columns:1fr; height: auto; }
+      .sidebar{border-right:0;border-bottom:1px solid rgba(15,23,42,0.05);}
+      .tabs{flex-wrap:wrap;}
+      .two-column-lists {
+        grid-template-columns: 1fr; /* single column */
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+  const password = "cauchen527"; // set your password
+  let attempts = 3;
+  let input = prompt("Enter password to view this page:");
+
+  while (input !== password && attempts > 1) {
+    attempts--;
+    input = prompt(`Wrong password! You have ${attempts} attempt(s) left:`);
+  }
+
+  if (input !== password) {
+    document.body.innerHTML = "<h1>Access Denied</h1>";
+  }
+</script>
+
+  <main class="container">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <h1 class="name">Guocheng Wang</h1>
+      <p class="contact">
+        <strong>Phone:</strong> <a href="tel:+8613665538332">(+86) 136 6553 8332</a><br>
+        <strong>Email:</strong> <a href="mailto:cauchen@139.com">cauchen@139.com</a>
+        <div class="contact-icons">
+          <!-- Phone -->
+          <a href="tel:+8613665538332" title="Call me">
+            📞
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:cauchen@139.com" title="Email me">
+            ✉️
+          </a>
+
+          <!-- CV PDF -->
+          <a href="src/CV.pdf" target="_blank" rel="noopener noreferrer" title="Download CV">
+            📄
+          </a>
+        </div>
+
+      </p>
+
+      <img src="src/professional.jpg" alt="Guocheng Wang" class="profile-photo">
+
+      <div class="section-title">Profile</div>
+      <p style="font-size:0.95rem;line-height:1.45">
+        Recent graduate from Peking University with a Bachelor’s degree in Finance and Economics and a minor in Data Science and Finance.
+        Available for research/PhD application cycle
+      </p>
+
+      <div class="section-title">Key Info</div>
+      <ul>
+        <li><strong>Degree:</strong> B.Fin (minor: Data Science)</li>
+        <li><strong>GPA:</strong> 3.85 / 4.00 (11/130)</li>
+        <li><strong>Exchange:</strong> UC Berkeley (Jan–May 2024), GPA 3.92</li>
+      </ul>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <section class="right">
+      <nav class="tabs">
+        <div class="tab active" data-tab="about">About</div>
+        <div class="tab" data-tab="education">Education</div>
+        <div class="tab" data-tab="research">Research</div>
+        <div class="tab" data-tab="career">Career</div>
+        <div class="tab" data-tab="other">Other</div>
+      </nav>
+
+      <!-- About -->
+      <div id="about" class="card-section active">
+        <h2 class="section-title">About Me</h2>
+        <p style="font-size:1rem;line-height:1.45">
+        I am a recent graduate from Peking University, where I earned a Bachelor’s degree in Finance and Economics with a minor in Data Science and Finance.
+        My research experience spans applied econometrics, structural estimation, and experimental design, with a particular focus on behavioral and empirical economics.
+        I also studied at the University of California, Berkeley, as an exchange student in the Department of Economics.
+        I am currently preparing for the upcoming research and Ph.D. application cycle, seeking to further develop my analytical and empirical research skills.
+      </p>
+        <div class="two-column-lists">
+          <div>
+            <h2 class="section-title">Interest</h2>
+            <ul class="bullet" style="list-style: disc;">
+              <li>Behavioral Economics</li>
+              <li>Political Economics</li>
+              <li>Industrial Organization</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h2 class="section-title">Skill</h2>
+            <ul class="bullet" style="list-style: disc;">
+              <li>Experimental Design</li>
+              <li>Data Analysis</li>
+              <li>Machine Learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div id="education" class="card-section">
+        <h2 class="section-title">Education</h2>
+        <div>
+          <p class="item-title">Peking University, Guanghua School of Management</p>
+          <p class="item-meta">Beijing, CN — Sept 2021 – July 2025</p>
+          <ul class="bullet">
+            <li>GPA: 3.85 / 4.00 (rank 11 / 130).</li>
+            <li>Admitted via National College Admissions exam (top 0.02%)</li>
+            <li>Honors: Huatai, POP MART, ESEC, National Encouragement Scholarship.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:16px">
+          <p class="item-title">University of California in Berkeley, Economics Department (Exchange)</p>
+          <p class="item-meta">Berkeley, CA — Jan 2024 – May 2024</p>
+          <ul class="bullet">
+            <li>GPA: 3.92 / 4.00. </li>
+            <li>Ph.D.-level courses in Econometrics, Mechanism Design, Agency Theory.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Research -->
+      <div id="research" class="card-section">
+        <h2 class="section-title">Research Experience</h2>
+        <div>
+          <p class="item-title">Project Regarding Amazon Review — Research Assistant</p>
+          <p class="item-meta">Berkeley, CA — Jan 2024 – present</p>
+          <ul class="bullet" style="list-style: disc">
+            <li>Reduced-form analysis: linear regressions, hazard models; results documented with LaTeX.</li>
+            <li>Structural model estimation: assist with model building, MLE and BLP estimation.</li>
+            <li>Field & lab experiment design: survey design in Qualtrics, IRB application, pre-registration and sub-experiments.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:16px">
+          <p class="item-title">GSM Behavioral Science in Action Team — Research Assistant</p>
+          <p class="item-meta">Beijing, CN — Apr 2023 – present</p>
+          <ul class="bullet" style="list-style: disc">
+            <li>Model construction: decision-making model for prosocial behavior.</li>
+            <li>Lab experiment design: Qualtrics questionnaires; Prolific recruitment to test hypotheses and reduce free-riding interference.</li>
+            <li>Preliminary analysis: distribution displays and regression tests to build model inputs.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:16px">
+          <p class="item-title">Project Regarding Chinese Population (GSM, PKU) — Research Assistant</p>
+          <p class="item-meta">Beijing, CN — Mar 2024 — Jan 2025</p>
+          <ul class="bullet" style="list-style: disc">
+            <li>Data processing: cleaning, analysis, and visualization of public datasets.</li>
+            <li>Literature review: synthesize theoretical guidance and research directions.</li>
+            <li>Paper revision: assist in revising for resubmission (e.g., AER resubmission process).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Career -->
+      <div id="career" class="card-section">
+        <h2 class="section-title">Career Experience</h2>
+        <div style="margin-top:16px">
+          <p class="item-title">Bain Innovation Management Consulting (Shanghai) Co., Ltd. -- Part Time Assistant</p>
+          <p class="item-meta">Beijing, CN — Jun 2022 — Dec 2022</p>
+          <ul class="bullet" style="list-style: disc; display:flex; flex-direction:column; gap:10px">
+            <li><strong> Data collation:</strong><br> Collect and organize the technical requirements of relevant products according to the public CT project tender, and 
+display them separately according to the degree of importance</li>
+            <li><strong>Industry research:</strong><br> Based on the financial reports of listed companies and other public data, make a preliminary judgment on the 
+profitability level of different business modules of the industry </li>
+            <li><strong>Meeting Minutes:</strong><br> Organize company and expert meeting minutes into verbatim scripts and sift through key information </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Other -->
+      <div id="other" class="card-section">
+        <h2 class="section-title">Other</h2>
+        <ul class="bullet" style="display:flex; flex-direction:column; gap:10px">
+          <li><strong>Teaching:</strong> Discussion class TA — Economics, Peking University.</li>
+          <li><strong>Awards:</strong> Huatai, POP MART, ESEC, National Encouragement Scholarship.</li>
+          <li><strong>Programming & Tools:</strong> LaTeX · R · Python · Stata · SPSS · Qualtrics.</li>
+          <li><strong>Interests:</strong> Debating · Table badminton · Pickleball.</li>
+        </ul>
+
+        <div style="margin-top: 10px;">
+          <a href="./personal/" target="_blank" rel="noopener noreferrer">Want to know more about me?</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript for Tabs -->
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const sections = document.querySelectorAll('.card-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // remove active state
+        tabs.forEach(t => t.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        // activate selected
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+        // scroll into view on mobile
+        document.getElementById(tab.dataset.tab).scrollIntoView({behavior:"smooth"});
+      });
+    });
+  </script>
+</body>
+</html>
+
